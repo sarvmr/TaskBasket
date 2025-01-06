@@ -1,0 +1,6 @@
+@TaskBasket_HostAddress = http://localhost:5080
+
+GET {{TaskBasket_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
