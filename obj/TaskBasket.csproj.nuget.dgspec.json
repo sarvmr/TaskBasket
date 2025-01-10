@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Naz\\Task Basket\\TaskBasket\\TaskBasket.csproj": {}
+    "C:\\Users\\sarve\\Documents\\GitHub\\TaskBasket\\TaskBasket.csproj": {}
   },
   "projects": {
-    "D:\\Naz\\Task Basket\\TaskBasket\\TaskBasket.csproj": {
+    "C:\\Users\\sarve\\Documents\\GitHub\\TaskBasket\\TaskBasket.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Naz\\Task Basket\\TaskBasket\\TaskBasket.csproj",
+        "projectUniqueName": "C:\\Users\\sarve\\Documents\\GitHub\\TaskBasket\\TaskBasket.csproj",
         "projectName": "TaskBasket",
-        "projectPath": "D:\\Naz\\Task Basket\\TaskBasket\\TaskBasket.csproj",
-        "packagesPath": "C:\\Users\\sarvm\\.nuget\\packages\\",
-        "outputPath": "D:\\Naz\\Task Basket\\TaskBasket\\obj\\",
+        "projectPath": "C:\\Users\\sarve\\Documents\\GitHub\\TaskBasket\\TaskBasket.csproj",
+        "packagesPath": "C:\\Users\\sarve\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sarve\\Documents\\GitHub\\TaskBasket\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sarvm\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\sarve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -71,6 +68,10 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[9.0.0-preview.2.efcore.9.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
@@ -95,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
