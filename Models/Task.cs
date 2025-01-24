@@ -26,5 +26,11 @@ namespace TaskBasket.Models
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+
+        // Foreign key for related user
+        public int? UserId { get; set; }
+
+        // Navigation property for related user
+        public User User { get; set; }
     }
 }

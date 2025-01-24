@@ -9,9 +9,17 @@ namespace TaskBasket.Data
 
         // DbSet for Task entity
         public DbSet<Models.Task> Tasks { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Configure User entity
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Tasks)
+                .WithOne(t => t.User)
+                .HasForeignKey(t => t.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             // Configure Task entity
             modelBuilder.Entity<TaskBasket.Models.Task>(entity =>
             {
