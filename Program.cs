@@ -1,4 +1,7 @@
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using TaskBasket.Data;
 using TaskBasket.Services;
 
@@ -17,7 +20,26 @@ builder.Services.AddDbContext<TaskContext>(options =>
 });
 
 // Registering the JwtService
-builder.Services.AddSingleton(new JwtService(builder.Configuration["Jwt:SecretKey"]));
+builder.Services.AddScoped<JwtService>(provider =>
+{
+    var configuration = provider.GetRequiredService<IConfiguration>();
+    var secretKey = configuration["Jwt:SecretKey"]; // Ensure this is properly configured in appsettings.json
+    var tokenExpirationInHours = int.Parse(configuration["Jwt:TokenExpirationInHours"] ?? "1"); // Default to 1 if not set
+
+    return new JwtService(secretKey, tokenExpirationInHours);
+});
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["Jwt:SecretKey"])),
+            ValidateIssuer = false,
+            ValidateAudience = false
+        };
+    });
 
 // Add CORS policy
 builder.Services.AddCors(options =>
@@ -45,6 +67,8 @@ app.UseCors("AllowAll");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseAuthentication();
 
 app.MapControllers();
 

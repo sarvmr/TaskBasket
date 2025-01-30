@@ -20,7 +20,14 @@ public class TaskController : ControllerBase
     public async Task<ActionResult<IEnumerable<TaskBasket.Models.Task>>> GetTasks()
     {
         // Get the logged-in user's ID
-        var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+        var claim = User.FindFirst(ClaimTypes.NameIdentifier);
+
+        if (claim == null || string.IsNullOrEmpty(claim.Value))
+        {
+            return Unauthorized("User is not authenticated or NameIdentifier claim is missing.");
+        }
+
+        var userId = int.Parse(claim.Value);
 
         // Fetch tasks belonging to the user
         var tasks = await _context.Tasks
@@ -47,14 +54,19 @@ public class TaskController : ControllerBase
         return Ok(task);
     }
 
-    
+
 
     // POST: api/Task
     [HttpPost]
     public async Task<ActionResult<TaskBasket.Models.Task>> PostTask(TaskBasket.Models.Task task)
     {
-        // Get the logged-in user's ID
-        var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+        // Get the logged-in user's ID using the correct claim type
+        var claim = User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier");
+        if (claim == null || string.IsNullOrEmpty(claim.Value))
+        {
+            return Unauthorized("User is not authenticated or NameIdentifier claim is missing.");
+        }
+        var userId = int.Parse(claim.Value);
 
         // Associate the task with the user
         task.UserId = userId;

@@ -558,3 +558,6 @@ D:\Naz\Task Basket\TaskBasket\obj\Debug\net8.0\refint\TaskBasket.dll
 D:\Naz\Task Basket\TaskBasket\obj\Debug\net8.0\TaskBasket.pdb
 D:\Naz\Task Basket\TaskBasket\obj\Debug\net8.0\TaskBasket.genruntimeconfig.cache
 D:\Naz\Task Basket\TaskBasket\obj\Debug\net8.0\ref\TaskBasket.dll
+D:\Naz\Task Basket\TaskBasket\bin\Debug\net8.0\BCrypt.Net-Next.dll
+D:\Naz\Task Basket\TaskBasket\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Naz\Task Basket\TaskBasket\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll

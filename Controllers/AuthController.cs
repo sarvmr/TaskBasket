@@ -3,9 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using TaskBasket.Data;
 using TaskBasket.Models;
 using TaskBasket.Services;
-using BCrypt.Net;
-
-
 
 [Route("api/[controller]")]
 [ApiController]

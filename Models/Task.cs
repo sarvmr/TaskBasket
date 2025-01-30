@@ -31,6 +31,6 @@ namespace TaskBasket.Models
         public int? UserId { get; set; }
 
         // Navigation property for related user
-        public User User { get; set; }
+        public User? User { get; set; }
     }
 }
