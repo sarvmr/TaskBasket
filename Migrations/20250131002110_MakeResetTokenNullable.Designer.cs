@@ -12,8 +12,8 @@ using TaskBasket.Data;
 namespace TaskBasket.Migrations
 {
     [DbContext(typeof(TaskContext))]
-    [Migration("20250123222342_AddUsersAndTaskUserRelation")]
-    partial class AddUsersAndTaskUserRelation
+    [Migration("20250131002110_MakeResetTokenNullable")]
+    partial class MakeResetTokenNullable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -70,7 +70,7 @@ namespace TaskBasket.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlComputedColumn(b.Property<DateTime>("UpdatedAt"));
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -99,6 +99,12 @@ namespace TaskBasket.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("ResetToken")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime?>("ResetTokenExpiry")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -113,8 +119,7 @@ namespace TaskBasket.Migrations
                     b.HasOne("TaskBasket.Models.User", "User")
                         .WithMany("Tasks")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("User");
                 });

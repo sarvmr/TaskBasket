@@ -561,3 +561,5 @@ D:\Naz\Task Basket\TaskBasket\obj\Debug\net8.0\ref\TaskBasket.dll
 D:\Naz\Task Basket\TaskBasket\bin\Debug\net8.0\BCrypt.Net-Next.dll
 D:\Naz\Task Basket\TaskBasket\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Naz\Task Basket\TaskBasket\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
+D:\Naz\Task Basket\TaskBasket\bin\Debug\net8.0\SendGrid.dll
+D:\Naz\Task Basket\TaskBasket\bin\Debug\net8.0\StarkbankEcdsa.dll

@@ -52,6 +52,12 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddScoped<EmailService>(provider =>
+{
+    var configuration = provider.GetRequiredService<IConfiguration>();
+    return new EmailService(configuration);
+});
+
 
 var app = builder.Build();
 

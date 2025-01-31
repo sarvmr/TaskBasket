@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8qemUBfifLw=",
+  "dgSpecHash": "So2TRMSusFY=",
   "success": true,
   "projectFilePath": "D:\\Naz\\Task Basket\\TaskBasket\\TaskBasket.csproj",
   "expectedPackageFiles": [
@@ -130,6 +130,8 @@
     "C:\\Users\\sarvm\\.nuget\\packages\\nuget.protocol\\6.11.0\\nuget.protocol.6.11.0.nupkg.sha512",
     "C:\\Users\\sarvm\\.nuget\\packages\\nuget.versioning\\6.11.0\\nuget.versioning.6.11.0.nupkg.sha512",
     "C:\\Users\\sarvm\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\9.0.0-preview.2.efcore.9.0.0\\pomelo.entityframeworkcore.mysql.9.0.0-preview.2.efcore.9.0.0.nupkg.sha512",
+    "C:\\Users\\sarvm\\.nuget\\packages\\sendgrid\\9.29.3\\sendgrid.9.29.3.nupkg.sha512",
+    "C:\\Users\\sarvm\\.nuget\\packages\\starkbank-ecdsa\\1.3.3\\starkbank-ecdsa.1.3.3.nupkg.sha512",
     "C:\\Users\\sarvm\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
     "C:\\Users\\sarvm\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
     "C:\\Users\\sarvm\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
