@@ -12,7 +12,8 @@ public class EmailService
 
     public EmailService(IConfiguration configuration)
     {
-        _apiKey = configuration["SendGrid:ApiKey"];
+        _apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY") 
+                  ?? throw new Exception("SendGrid API key is missing.");
         _fromEmail = configuration["SendGrid:FromEmail"];
         _fromName = configuration["SendGrid:FromName"];
     }
