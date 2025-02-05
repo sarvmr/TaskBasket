@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TaskBasket.Data;
@@ -115,5 +116,37 @@ public class AuthController : ControllerBase
 
         return Ok(new { message = "Password reset successfully. Please log in." });
     }
+
+    [HttpGet("user")]
+    public async Task<IActionResult> GetUser()
+    {
+        try
+        {
+            // Get the userId from the claim (using the same claim key as in Login)
+            var userId = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized(new { error = "Unauthorized" });
+            }
+
+            // Find the user by the userId (use int.Parse for conversion)
+            var user = await _context.Users
+                .FirstOrDefaultAsync(u => u.Id == int.Parse(userId));
+
+            if (user == null)
+            {
+                return NotFound(new { error = "User not found" });
+            }
+
+            return Ok(new { username = user.Username, email = user.Email });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { error = "Server error", message = ex.Message });
+        }
+    }
+
+
 
 }

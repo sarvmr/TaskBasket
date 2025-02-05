@@ -16,7 +16,8 @@
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5080",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SENDGRID_API_KEY": "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"
       }
     },
     "https": {
