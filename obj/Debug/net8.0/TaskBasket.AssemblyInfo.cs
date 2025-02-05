@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaskBasket")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b0de2d9a3fa49e59cd27d4933763adcbb80ed10")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+936393749b161a1136c37dec81148ef0e7aab0bd")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaskBasket")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaskBasket")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
